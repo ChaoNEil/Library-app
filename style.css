@@ -8,10 +8,11 @@
     justify-content: center;
 }
 
-#add-book-btn{
+.button-container{
     display: flex;
     justify-content: center;
 }
+
 
 #footer-section {
     position: fixed;
