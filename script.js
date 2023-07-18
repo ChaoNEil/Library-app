@@ -8,6 +8,18 @@ function Book(title,author,pages,read) {
   this.read = read
 }
 
+
+function render(){
+  let libraryElement = document.getElementById("library");
+  libraryElement.innerHTML = "";
+  for (let i = 0; i < myLibrary.length; i++) {
+    let book = myLibrary[i];
+    let bookElement = document.createElement("div");
+    bookElement.innerHTML = `<p>${book.title}</p>`
+    libraryElement.appendChild(bookElement);
+  }
+}
+
 function addBookToLibrary() {
   // do stuff here
   let title = document.getElementById("title").value;
@@ -15,7 +27,8 @@ function addBookToLibrary() {
   let pages = document.getElementById("pages").value;
   let read = document.getElementById("read").checked;
   let newBook = new Book(title,author,pages,read)
-  console.log(newBook);
+  myLibrary.push(newBook);
+  render();
 }
 
 
